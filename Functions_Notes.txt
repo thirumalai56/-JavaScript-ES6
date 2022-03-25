@@ -1,0 +1,309 @@
+Functions
+---------
+what is a function ?
+- Block of code .
+- A set of statements to preform a task.
+- Defined once, but may may be executed, or called (Invoking) any no.of times.
+- Functions are parameterized.
+- A function can return a value.
+- In JS functions are objects.
+- Nested function - we can define function inside a function.
+
+Defining a Function :
+--------------------
+- can define a function keyword.
+- A function definition consists of the function keyword followed by
+  - Name of the function
+  - A Optional list of parameters seperated by commas enclosed in paranthesis.
+  - Enclosed in curly brackets. {...}
+     can contain zero or more statements inside.
+	 body of the function, executed when function invocation happens.
+
+Function as a Statement:
+------------------------
+function add(a,b){
+	return (a+b);
+}
+
+Function as a Expression:
+-------------------------
+
+var square = function (x){return x*x;};
+
+- function expression can be used as arguments to the other function.
+
+ array.sort(function(a,b){
+			return a-b;
+			}
+			);
+
+Nested function :
+----------------
+can create a function inside of the other function.
+
+function hypotunese(side1,side2){
+	
+	function square(side){
+	   return side*side;
+	}
+	 return Math.sqrt(square(side1)+square(side2));
+}
+
+Constructor Function :
+----------------------
+Object
+------
+- Anything we can represent as object.
+- every object has state and behaviour.
+- state of the object will be represented as property to the object.
+- Methods : will be r as a behavours for the object.
+{
+	<key>:<Value>
+	methods:function(){
+	 ....
+	 }
+}
+
+Account object :
+----------------
+name, account,balance has states.
+withdraw and deposit are the behavious for the account object.
+
+var account = {
+				name:"Ravi",
+				acc_no:"112343",
+				balance:1000,
+				deposit:function(amount){
+						this.balance = this.balance + amount;
+				}
+				withdraw:function(amount){
+					this.balance = this.balance - amount;
+				}
+			};
+			
+var account2 = {}
+
+- create a prototype or blueprint for the object.
+
+- function should start with the capital letter.
+
+function Account(name,acc_no,balance){
+	this.name = name;
+	this.acc_no = acc_no;
+	this.balance = balance;
+	this.deposit = function(amount){
+				this.balance = this.balance + amount;
+	
+	}
+	this.withdraw= function(amount){
+					this.balance = this.balance - amount;
+				}
+
+	}
+Invoking functions :
+--------------------
+The execution of a function can happen at the time of the 
+invocation but not at the time of the definition.
+
+Function can be invoked in four ways.
+1. As function
+2. As methods
+3. As constructors
+4. Indirectly by calling call() and apply(),bind() methods on the function.
+
+
+function add(a,b){
+	return (a+b);
+}
+var result = add(10,20);
+
+console.log(result); //30 
+
+If function does not return a value, default is undefined.
+
+Method invocation :
+------------------
+A method is nothing but a JS function, stored in a property of an object.
+
+var calculator= {
+				  value1 :10,value2:20,
+				  add:function(){
+						this.result = this.value1+this.value2;
+						}
+				
+				};
+				
+				
+   Object_Name.<Name_Of_Func>();
+   
+   
+calculator.add();
+console.log(calculator.result);
+
+
+Constructor Invocation:
+-----------------------
+If a function or method invocation is preceded by the keyword new, then it is a constructor invocation.
+
+new Object();
+new String()
+new Number();
+new Boolean();
+new Array();
+new Function();
+new Date(); 
+
+
+function Account(name,acc_no,balance){
+	this.name = name;
+	this.acc_no = acc_no;
+	this.balance = balance;
+	this.deposit = function(amount){
+				this.balance = this.balance + amount;
+	
+	}
+	this.withdraw= function(amount){
+					this.balance = this.balance - amount;
+				}
+
+	}
+	
+var acc1 = new Account("Ravi","4444",1000);	
+
+1. create a new object.
+2. linked the properties of the function to the created object.
+3. The same new object will be bind to this.
+4. If the function does not return anything, by default returns the this object.
+
+
+this:
+----
+- Refers to an object.
+- Which calls the function that the object contains.
+- can see the value of this at every line of execution.
+
+- The value of the this is decided based on how the code is going to execute.
+- Execution context.
+- It takes different values depending on the usage.
+
+  - Inside a method
+  - Inside a function
+  - Alone(Global)
+  - In an event.
+  - call(),apply() and bind() functions.
+ 
+Global Context:
+---------------
+Outside of any function (Global context) , this refers global object.
+
+window object is the global object .
+console.log(this);
+
+
+globalThis - refers to the global object always, regardless of the current context the code is 
+running.
+Function context :
+------------------
+Inside a function, the value of this depends on how the function is called.
+
+In an Event :
+------------
+- Events are refered as the user actions or the browser actions.
+- In programming, an event is an action that occurs as a result of the 
+user action.
+- Ex: Button click, Loading of page, Key events,Mouse , Onchange
+
+- Button is an HTML element. DOM are stored as objects.
+- On click of the button , 
+     it raises an event onclick, --> Perform an action (write a function)
+
+call(), apply() and bind()
+--------------------------
+call() : 
+--------
+- Can Invoke any function.
+- It takes the thisArg or this context as the first argument.
+- 
+
+<Function_Name>.call(thisArg,arg1,arg2,...argn)
+
+We can use the call() method on different objects.
+
+
+apply():
+-------
+Similar to call , the difference is the array of arguments.
+
+<Function_Name>.apply(thisArg,[arg1,arg2,arg3,....,argn]);
+
+ 
+bind() method :
+---------------
+
+- Function Binding
+- can bind any object to this reference.
+- 
+<Function_Name>.bind(thisArg, comma seperated list of args);
+
+--> Returns the binded function.
+--> It wont invoke the function immediately.
+--> Explictly we have to call.
+
+It will execute the function in future, but binding of the object can be done now.
+
+- Specify the arguments at the time of the creation or 
+  To the return bound function at a later time (at the time of invocation)
+  
+  
+Arrow Functions: 
+----------------
+- It were introduced in ES6.
+- Provides an alternative way to write the concise / shorter syntax compared to the function expression.
+
+let sum = function(a,b) {return (a+b);}
+
+Syntax:
+-------
+=>(Fat Arrow), -> (thin arrow)
+1. (param1,param2,...,paramN)=>{statements}
+
+2. (param1,param2,...,paramN)=> expression
+   
+    (param1,param2,...,paramN)=> {return expression;}
+3. (singleParam)=>{statements}
+    singleParam =>{statements}
+4. With No parameters
+   ()=>{statements}
+
+ Rule : No line break after the arrow function parameters to the Fat arrow(=>)  
+   	
+No Seperate this :
+
+- An arrow fnc does not have its own this value, enclosing the lexical scope is used.
+
+	
+Default Parameters:
+------------------
+
+function sum(a=10,b=100){
+	return a+b;
+}
+
+Rest Parameters :  (...)
+-----------------
+- Allow us to create a function with the variable length parameters.
+
+- All the arguments of the func , combined into an array.
+
+- A rest parameter is indicated by the three dots (...) preceded by parameter name.
+
+Restrictions
+-------------
+1. There must be only one rest parameter for the function.
+2. rest parameter must always be the last parameter.
+
+
+
+	   
+
+

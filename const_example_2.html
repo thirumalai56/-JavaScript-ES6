@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Let Closures Example</title>
+	<script type="text/JavaScript">
+	 const PI =3.14;
+	 console.log("PI Value is "+PI);
+	 function showProduct(){
+		const RATE = 1000;
+		console.log("RATE is "+RATE);
+		const PI = 3.147123;
+		console.log("PI in functtion is "+PI);
+		//We cant access the const variable using the window object .
+		console.log("PI global Value "+window.PI); 
+		
+	    //const NAME; //Missing initializer in const declaration
+	 }
+	 
+	showProduct();
+	</script>	
+</head>
+<body>
+	
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Let Closures Example</title>
+	<script type="text/JavaScript">
+	
+	let array = [1,2,3];
+	// Get the lenght of the array.
+	console.log(array.length);
+	
+	let secondArray = new Array(10);
+	console.log(secondArray[5]);
+	//join() method
+	console.log(array.join()); // 1,2,3
+	console.log(array.join('#'));//1#2#3
+	console.log(secondArray.join('$'));
+	//reverse
+	console.log(array.reverse());
+	console.log(array);
+	//sort()
+	let fruits =["mango","grapes","anar"];
+	console.log(fruits.sort()); // 
+	let numbers = [1111,22,11,33,1,88,1234];
+	console.log(numbers.sort(compareFunc));
+	
+	function compareFunc(a,b){
+		return a-b; //1111 -22 // +ve value b comes first 22,1111
+	}
+	//concat method 
+	/*
+	fucntion (person1,person2){
+		return person1.age - person2.age; // Person2 will comes for the first.
+	}
+	*/
+   var  ar1 = [1,2,3];
+   console.log(ar1.concat(4,5));
+   console.log(ar1.concat([6,7]));
+   console.log(ar1.concat([4,5,[9,10]]));
+   
+   //Slice method
+   
+   var array1 = [1111,22,11,33,1,88,1234];
+   console.log(array1.slice(2,5)); //[11,33,1]
+   console.log(array1.slice(4)); // 1,88,1234
+   console.log(array1.slice(4,-1));//1,88
+   
+   //Deletion of the elements using splice
+   console.log(array1.splice(2,1)); //Removes the 11 element.
+   console.log(array1); [1111, 22, 33, 1, 88, 1234]
+   console.log(array1.splice(2,1,99,9999,100)); //[1111, 22, 99, 9999, 100, 1, 88, 1234]
+   console.log(array1);
+   //push and pop
+   
+    let array3= [23,24,25];
+	array3.push(26,27,28);
+	console.log(array3);
+	
+	console.log(array3.pop()); //28 
+	console.log(array3);
+	
+	//indexOf()
+	
+	console.log(array3.indexOf(27));
+	console.log(array3.indexOf(-25));
+	
+	//lastIndexOf()
+	let array4= [23,24,25,26,27,25,29,30];
+	console.log(array4.lastIndexOf(25));
+	console.log(array4.lastIndexOf(25,4));//2
+	</script>	
+</head>
+<body>
+	
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Let Example</title>
+	<script type="text/JavaScript">
+	
+      var firstVariable ="hello";
+	  let globlalLetVar2 = "Global Let"; // global variable - global scope.
+	  function letExamples(){
+	  // var secondVarVariable ; 
+		let letVariable = 100; // local scope 
+		for(var counter =0; counter <10 ; counter++){ // Block level scope 
+			console.log(counter);
+			let blockVar = 100;
+		}
+		console.log("firstVariable"+firstVariable); //hello
+		console.log("letVariable"+letVariable); //100
+		console.log("counter"+counter); //10
+		
+		console.log("var variable "+secondVarVariable); 
+		var secondVarVariable = "Hoisting Concept";	 //Hoisting 
+		/*
+		secondVarVariable = "Hoisting Concept";
+		*/
+		
+		let secondLetVariable = 2000;
+		console.log("Second Let Variable "+ secondLetVariable);
+		
+		// var secondLetVariable ; //Identifier 'secondLetVariable' has already been declared
+		
+		var secondVarVariable =  "REDeclaring";
+		
+		//console.log("globlalLetVar-->"+globlalLetVar);
+		let globlalLetVar = "GlobalReDeclaring";
+		console.log("globlalLetVar-->"+globlalLetVar);
+		
+		console.log("Accessing the var variable using the window --> "+window.firstVariable);
+		console.log("Accessing the let variable using the window --> "+window.globlalLetVar2);
+		console.log("globlalLetVar-->"+globlalLetVar2);
+		
+	  }	
+	  letExamples();
+	</script>	
+</head>
+<body>
+	
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Bind Example</title>
+	
+	<script type="text/JavaScript">
+	
+	 let multiply = function(x,y){return x*y;}
+	 
+	 let multiplyArrow  = (x,y)=> x*y;
+	 
+	 console.log(multiplyArrow(10,20));
+	 
+	 let double =  x => 2*x;
+	 
+	 console.log("Double value"+ double(100));
+	 /*
+	 const func1 = (x,y)
+	                =>{
+					return x+y;
+					};  //Line break 
+	 */
+	 
+	 const func1 = (x,y) =>
+							{
+								return x+y;
+							};
+							
+	 //Line breaks inside the parameter definitions are also OK.
+	 const func2 = (x,
+	                y,
+					z)=>
+					{
+						return (x+y+z);
+					};
+					
+	//this example.
+
+		function Person(name,lastName){
+			this.firstname = name;
+			this.lastName  = lastName;
+			
+			this.getFullName = ()=> { 
+				console.log(this);
+			    return name +" " + lastName;
+			}
+			this.getFullNameFun= function(){
+					console.log(this);
+				 return this.name + " "+ this.lastName;
+				}
+			}
+		var person = new Person("Ravi","Raju");
+         		
+		//person.getFullName();
+		console.log("---Using Call method--");
+		console.log(person.getFullName.call({firstname:"Raghava",lastName:"Rag"}));
+		console.log("Normal Function this behaviour");
+		console.log(person.getFullNameFun.call({name:"Raghava",lastName:"Raghu"}));
+		
+		
+		let thisExample = ()=>this;
+		
+		console.log(thisExample()); //window
+		
+		console.log("Calling of the this using call"+ thisExample.call(person));
+		
+	
+	</script>
+</head>
+<body>
+	
+</body>
+
+</html>

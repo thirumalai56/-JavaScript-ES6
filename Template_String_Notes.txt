@@ -1,0 +1,66 @@
+Template Literals or Template Strings 
+-------------------------------------
+- var/let/const
+   var message = "firstString";
+   
+   var message2 = 'secondString';
+   
+   \n --> New line character
+   
+   var MultiLineStr = "firstLine\n SecondLine";
+   var name = "Raju";
+   
+   var greetMsg = "Good Morning to "+name;
+   
+   +(expression);
+   
+   var sumMessage = "Sum of 2 and 3 is "+(2+3);
+   
+   var htmlDiv = "<div> Div Element "+sumMessage+"</div>";
+   
+   
+   Provides better way or easiest way to represen the strings
+   
+   MultiLineStr
+   Basic String formatting
+   HTML Escaping
+   
+   - Template Strings are delimited by backticks (`).
+   
+   let message = `Hello world`;
+   
+   console.log(message);
+   typeof message -> String
+   
+   let message = `Hello World \`Alas`;
+   
+   MultilineString -> 
+   let message = `Multi line 
+				  String`;
+
+  Making substitution :
+  ----------------------
+  
+   ${opening }closing
+   
+   let name ='AbrahamLincon';
+   
+   let message = `Hello - ${name}`;
+   
+		
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   

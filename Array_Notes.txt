@@ -1,0 +1,139 @@
+Arrays:
+-------
+- collection of items.
+- array literals []
+- new Array()
+
+let integerArray = [1,2,3,4,5];
+let primesArray = new Array(10);
+
+default values in the array are undefined.
+
+length : can get the length of the array using the length property.
+
+integerArray.length;  //5 
+// Zero-based index 
+
+
+Methods:
+-------
+join() : Returns an array as a String.
+         The elements will be seperated by a specified seperator.
+		 default specifier is ,
+			
+let integerArray = [1,2,3,4,5];
+integerArray.join(); //1,2,3,4,5 
+
+integerArray.join('*');// 1*2*3*4*5
+var simpleArr = new Array(10); // by default all the values in the array are undefined
+simpleArr.join('-');------------
+reverse(): Modifies or reverse the elements of the array.
+
+sort(): 
+-------
+- The elements of an array will be sorted in alphabetical order.
+ (Temporarily converts the elements as string)
+- If array contains the undefined elements , they are sorted to the end of teh array.
+
+- sort(compareFunction)
+
+- > This compareFunction should return the below values.
+   
+    -ve value
+	zero 
+	+ve value.
+	
+	compareFunction(a,b){
+		return a-b; // -ve value // a comes first // index of a should be lower than the index of b.
+		//0 
+		//+ve // index of b should be lower than a -> b comes first.
+		
+	}
+
+conact : 
+-------
+Returns a new array, by concatenating orignial array with the values provided inthe conct method.
+
+var a = [1,2,3];
+
+a.concat(4,5) ; // [1,2,3,4,5]
+
+a.concat([6,7]); //[1,2,3,6,7]
+
+a.concat([6,7],[8,9]);[1,2,3,6,7,8,9]
+
+a.concat([4,5,[6,7]]);[1,2,3,4,5,[6,7]];
+
+Slice():
+-------
+Returns the subarray or slice specifed from tthe array.
+
+It takes two arguments specify teh start and end of the slice to be returned.
+
+var array = [1,2,3,4,5,6,7];
+
+array.slice(2,5);// [3,4,5]
+
+If only one argument specifed, it returns the array contains all elements from start to the end of the array.
+
+array.slice(2); [3,4,5,6,7];
+
+//If the value is -ve , it is relative the last element of the array.
+
+-1 --> Last element in the array.
+
+-3 --> third from the last element of the array.
+
+splice(): 
+--------
+- Can insert or delete the elements at the same time.
+- Modifies the orignial array.
+- 2 arguments --> 
+  first argument specifies the array position at which the insertion / or deletion should start.
+  second argument specifies the no.of elements should be deleted from the array.
+var array = [1,2,3,4,5,6,7];
+ - array.splice(2,1); //  [1,2,4,5,6,7] 
+
+- Returns the array of the deleted elements , empty array if no elements deleted.
+
+
+array.splice(2,1,99,100,230); // deltes 1 element.
+                              // 
+push() & pop()
+--------------
+- push - can add the elements to the array.
+         Returns the new length of the array.
+  array.push(1);
+  array.push(12,13,14);
+-pop - > Deletes the last element of an array.
+       > Returns the deleted element.
+
+indexOf():
+--------
+Returns the index of the first occurance of the specifed element.
+
+if no element is available , returns the -1.
+
+lastIndexOf()
+-------------
+Searches the array from end to start.
+
+an array of 10 objects.
+
+Person : {name:"",age:""}
+
+sort the array based on the age , descending / ascending order.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
